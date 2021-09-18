@@ -1,4 +1,5 @@
 |Price   |B|Bat|Postal |FlrA    |Address                     |Day|mls     |Type  |Garage                          |basement               |Condo fee   |
+|--------|-|---|-------|--------|----------------------------|---|--------|------|--------------------------------|-----------------------|------------|
 |$305,000|3|2.1|T6W 0N5|1,312.35|11413 14 Avenue             |38 |E4258192|duplex|                                |                       |            |
 |$309,000|3|2.1|T6W 1L5|1,192.11|3440 MCKAY Lane             |59 |E4255471|duplex|                                |                       |no condo fee|
 |$309,900|3|2.1|T6T 1N9|1,173.28|3754 24 Street              |21 |E4260410|duplex|front single car garage         |fully finished         |            |
