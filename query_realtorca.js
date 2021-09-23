@@ -252,6 +252,14 @@ try {
     $address = "undefined";
 }
 
+
+//Get the postal code
+try {
+    $postal = $address.trim().split(" ").pop();
+} catch(err) {
+    $postal = "undefined";
+}
+
 // Get MLS number
 //<span id="MLNumberVal">E4237328</span>
 try {
@@ -283,6 +291,18 @@ try {
 } catch(err) {
     $bathrooms = "undefined";
 }
+
+// Get no. of partial bathrooms
+//<div class="propertyDetailsSectionContentSubCon" id="propertyDetailsSectionVal_Partial">
+//    <div class="propertyDetailsSectionContentLabel">Partial</div>
+//    <div class="propertyDetailsSectionContentValue">1</div>
+//</div>
+try {
+    $partialBathrooms = $x("//div[@id='propertyDetailsSectionVal_Partial']/div[@class='propertyDetailsSectionContentValue']")[0].innerText;
+} catch(err) {
+    $partialBathrooms = "undefined";
+} 
+
 
 // Get description
 //<div id="propertyDescriptionCon">
@@ -404,7 +424,7 @@ try {
     $style = "undefined";
 }
 
-// Floor Space
+// Floor Space (in m2)
 //<div class="propertyDetailsSectionContentSubCon" id="propertyDetailsSectionVal_InteriorFloorSpace">
 //    <div class="propertyDetailsSectionContentLabel">Floor Space</div>
 //    <div class="propertyDetailsSectionContentValue">100.2 m2</div>
@@ -413,6 +433,13 @@ try {
     $floorSpace = $x("//div[@id='propertyDetailsSectionVal_InteriorFloorSpace']/div[@class='propertyDetailsSectionContentValue']")[0].innerText;
 } catch(err) {
     $floorSpace = "undefined";
+}
+
+// Floor Space (in sq ft)
+try {
+    $floorSpaceSqft = String(parseFloat($floorSpace.replace("m2", "").trim() * 10.74));
+} catch(err) {
+    $floorSpaceSqft = "undefined";
 }
 
 // Get Maintenance fees
@@ -432,10 +459,11 @@ $pageUrl = window.location.href;
 $line = "";
 $line += $listingPrice + '|';
 $line += $address + '|';
+$line += $postal + '|';
 $line += $mls + '|';
 $line += $bedrooms + '|';
 $line += $bathrooms + '|';
-$line += $description + '|';
+$line += $partialBathrooms + '|'; 
 $line += $propertyType + '|';
 $line += $buildingType + '|';
 $line += $storeys + '|';
@@ -447,7 +475,9 @@ $line += $totalParkingSpaces + '|';
 $line += $basementType + '|';
 $line += $style + '|';
 $line += $floorSpace + '|';
+$line += $floorSpaceSqft + '|';
 $line += $maintenanceFees + '|';
+$line += $description + '|';
 $line += $pageUrl;
 $line += '\n';
 console.log($line);
