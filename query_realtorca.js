@@ -369,6 +369,24 @@ try {
     $title = "undefined";
 }
 
+//land size
+//<div class="propertyDetailsSectionContentSubCon" id="propertyDetailsSectionContentSubCon_LandSize">
+//    <div class="propertyDetailsSectionContentLabel">Land Size</div>
+//    <div class="propertyDetailsSectionContentValue">466.89 m2</div>
+//</div>
+try {
+    $landSize = $x("//div[@id='propertyDetailsSectionContentSubCon_LandSize']/div[@class='propertyDetailsSectionContentValue']")[0].innerText;
+} catch(err) {
+    $landSize = "undefined";
+} 
+
+// Land Size (in sq ft)
+try {
+    $landSizeSqft = String(parseFloat($landSize.replace("m2", "").trim() * 10.74).toFixed(2));
+} catch(err) {
+    $landSizeSqft = "undefined";
+} 
+
 // Built in (year)
 //<div class="propertyDetailsSectionContentSubCon" id="propertyDetailsSectionContentSubCon_BuiltIn">
 //    <div class="propertyDetailsSectionContentLabel">Built in</div>
@@ -437,7 +455,7 @@ try {
 
 // Floor Space (in sq ft)
 try {
-    $floorSpaceSqft = String(parseFloat($floorSpace.replace("m2", "").trim() * 10.74));
+    $floorSpaceSqft = String(parseFloat($floorSpace.replace("m2", "").trim() * 10.74).toFixed(2));
 } catch(err) {
     $floorSpaceSqft = "undefined";
 }
@@ -469,6 +487,8 @@ $line += $buildingType + '|';
 $line += $storeys + '|';
 $line += $neighborhood + '|';
 $line += $title + '|';
+$line += $landSize + '|'; 
+$line += $landSizeSqft + '|'; 
 $line += $builtin + '|';
 $line += $parkingType + '|';
 $line += $totalParkingSpaces + '|';
