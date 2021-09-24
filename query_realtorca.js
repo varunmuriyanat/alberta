@@ -283,11 +283,13 @@ console.log($txt);
 //--------------Regex replaces to clean up data from Collboration Center--------------------
 :%s/^\n//g
 :%s/^\$\d*K\n//g
+:%s/^\$\d*M\n//g
 :%s/\(\d\{-}\>\) Days on Market/Days on Market: \1/g
 :%s/ - ML #\(E\d\{7}\)/\r\1/g
 :%s/\(T\d[a-zA-Z0-9]\s[a-zA-Z0-9]\{3}\)/\r\1/g
 :%s/\[View Detail\]\n\(.*\)\n/Status: \1\r/g
 %s/"/ /g
+:%s/^\$\d\{-}\n//g
 //--------------Regex replaces to clean up data from Collboration Center--------------------
 
 
