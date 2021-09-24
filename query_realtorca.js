@@ -1,50 +1,3 @@
-<div class="listingCardOuterBody">            
-    <div class="listingCardImageCon">                
-        <img class="listingCardImage" src="https://cdn.realtor.ca/listings/TS637671481647400000/reb10/medres/9/E4262589_1.jpg" data-binding="src=ImageURL,alt=Address" alt="#97 230 EDWARDS DR SW, Edmonton, Alberta ">            
-    </div>            
-    <div class="listingCardBody">                
-        <div class="listingCardTopBody" data-binding="hidden=ListingNotFound">                    
-            <div class="listingCardMLS" style="display: none;">MLS<sup>®</sup>: <span title="E4262589" data-binding="innertext=MLSNumber,title=MLSNumber">E4262589</span> </div>                    
-            <div class="listingCardPrice" title="$222,000 " data-value-cad="$222,000 " data-binding="data-value-cad={Price},innertext=DisplayPrice,title=ConvertedPrice">$222,000</div>                    
-            <div class="listingCardAddress" data-binding="innertext=Address">#97 230 EDWARDS DR SW, Edmonton, Alberta </div>                                                                            
-    </div>                                                                
-    <div class="listingCardIconStrip" data-binding="FooterIcons,visible=ShowFooterIcons" visible="true">
-        <div class="listingCardIconCon">                                
-            <div class="listingCardIconTopCon">                                    
-                <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    
-                <div class="listingCardIcon" data-binding="innertext=IconHTML">
-                    <div class="propertyCardBedIcon"><img src="/images/common/icons/svg/bed-gray.svg" alt=""></div>
-                </div>                                
-            </div>                                
-        <div class="listingCardIconText" data-binding="innertext=Label">Bedrooms</div>                            
-        </div>
-        <div class="listingCardIconCon">                                
-            <div class="listingCardIconTopCon">                                    
-                <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    
-                <div class="listingCardIcon" data-binding="innertext=IconHTML">
-                    <div class="propertyCardBathIcon"><img src="/images/common/icons/svg/bath-gray.svg" alt=""></div>
-                </div>                                
-            </div>                                
-        <div class="listingCardIconText" data-binding="innertext=Label">Bathrooms</div>                            
-    </div>
-</div>                
-</div>        
- </div>    
-
-https://www.realtor.ca/real-estate/23632774/97-230-edwards-dr-sw-edmonton-ellerslie
-<a 
-    href="/real-estate/23632774/97-230-edwards-dr-sw-edmonton-ellerslie" 
-    class="blockLink listingDetailsLink" 
-    data-binding="href=DetailsURL" 
-    target="_blank">        
-    <div class="listingCardOuterBody">            <div class="listingCardImageCon">                <img class="listingCardImage" src="https://cdn.realtor.ca/listings/TS637671481647400000/reb10/medres/9/E4262589_1.jpg" data-binding="src=ImageURL,alt=Address" alt="#97 230 EDWARDS DR SW, Edmonton, Alberta ">            </div>            <div class="listingCardBody">                <div class="listingCardTopBody" data-binding="hidden=ListingNotFound">                    <div class="listingCardMLS" style="display: none;">MLS<sup>®</sup>: <span title="E4262589" data-binding="innertext=MLSNumber,title=MLSNumber">E4262589</span></div>                    <div class="listingCardPrice" title="$222,000 " data-value-cad="$222,000 " data-binding="data-value-cad={Price},innertext=DisplayPrice,title=ConvertedPrice">$222,000 </div>                    <div class="listingCardAddress" data-binding="innertext=Address">#97 230 EDWARDS DR SW, Edmonton, Alberta </div>                                                                            </div>                                                                <div class="listingCardIconStrip" data-binding="FooterIcons,visible=ShowFooterIcons" visible="true"><div class="listingCardIconCon">                                <div class="listingCardIconTopCon">                                    <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    <div class="listingCardIcon" data-binding="innertext=IconHTML"><div class="propertyCardBedIcon"><img src="/images/common/icons/svg/bed-gray.svg" alt=""></div></div>                                </div>                                <div class="listingCardIconText" data-binding="innertext=Label">Bedrooms</div>                            </div><div class="listingCardIconCon">                                <div class="listingCardIconTopCon">                                    <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    <div class="listingCardIcon" data-binding="innertext=IconHTML"><div class="propertyCardBathIcon"><img src="/images/common/icons/svg/bath-gray.svg" alt=""></div></div>                                </div>                                <div class="listingCardIconText" data-binding="innertext=Label">Bathrooms</div>                            </div></div>                <div class="listingCardOfficeName" data-binding="innertext=OfficeNameAndType">RE/MAX River City</div>            </div>        </div>    </a>
-
-
-
-https://www.realtor.ca/real-estate/23461449/edmonton
-
-<div class="paginationLinkText"><i class="fa fa-angle-left"></i></div>
-
 
 window.open(https://www.realtor.ca/real-estate/23406617/10-amberly-co-nw-edmonton-casselman, '_blank').focus();
 
@@ -95,61 +48,166 @@ https://www.realtor.ca/map#ZoomLevel=11&Center=53.556139%2C-113.492490&LatitudeM
 
 
 
-// Get the urls
-$urls = $x("//a[starts-with(@href, '/real-estate')]")
-$url_str = "";
-for($i = 0; $i < $urls.length; $i++){ 
-    $url = $urls[$i].href;
 
-    if($url.length > 52) {
-        $url_str += $url + '\n';
+// -----------------------------realtor.ca search page------------------------------------------------
+<div class="cardCon">
+    <div class="listingCard card">    
+        <div class="listingCardHeader">        
+            <div class="listingCardHeaderLeft"></div>        
+            <div class="listingCardHeaderRight" data-binding="visible=ShowHeaderIcons" visible="true">                                                
+                <a 
+                    aria-label="Add Notes" 
+                    style="text-decoration: none; display: none;" 
+                    href="#" 
+                    data-value="23529731_4828 104A ST NW, Edmonton, Alberta _53.4858068953209_-113.49885531164" 
+                    data-binding="data-value={Id}_{AddressForNotes}_{Latitude}_{Longitude}" 
+                    class="propertyCardDetailsNoteIcon noteIcon listingCardActionIcon">                
+                    <span style="font-size: 31px; color: #F3E500;" class="listingCardNoteIcon m_al fa fa-sticky-note">
+                    </span>
+                </a>            
+                <a 
+                    aria-label="Add to My Favourites" 
+                    style="text-decoration: none;" 
+                    href="#" 
+                    data-value="23529731_53.4858068953209_-113.49885531164_1" 
+                    data-binding="data-value={Id}_{Latitude}_{Longitude}_{AppMode}" 
+                    class="propertyCardDetailsFavouriteIcon favouriteIcon listingCardActionIcon" 
+                    onclick="">                
+                    <img src="/images/common/icons/svg/heart-empty.svg" style="height: 27px; width: 31px;" alt="">
+                </a>                    
+            </div>    
+        </div>    
+        <a 
+            href="/real-estate/23529731/4828-104a-st-nw-edmonton-empire-park" 
+            class="blockLink listingDetailsLink" 
+            data-binding="href=DetailsURL" 
+            target="_blank">
+            <div class="listingCardOuterBody">
+                <div class="listingCardImageCon">
+                    <img 
+                        class="listingCardImage" 
+                        src="https://cdn.realtor.ca/listings/TS637659253779300000/reb10/medres/8/E4258388_1.jpg" 
+                        data-binding="src=ImageURL,alt=Address" alt="4828 104A ST NW, Edmonton, Alberta ">
+                </div>
+                <div class="listingCardBody">
+                    <div class="listingCardTopBody" data-binding="hidden=ListingNotFound">
+                        <div class="listingCardMLS" style="display: none;">MLS<sup>®</sup>: 
+                            <span title="E4258388" data-binding="innertext=MLSNumber,title=MLSNumber">E4258388</span>
+                        </div>
+                        <div class="listingCardPrice" title="$300,000 " data-value-cad="$300,000 " data-binding="data-value-cad={Price},innertext=DisplayPrice,title=ConvertedPrice">$300,000 
+                        </div>
+                        <div class="listingCardAddress" data-binding="innertext=Address">4828 104A ST NW, Edmonton, Alberta 
+                        </div>                                                                            
+                    </div>                                                                
+                    <div class="listingCardIconStrip" data-binding="FooterIcons,visible=ShowFooterIcons" visible="true">
+                        <div class="listingCardIconCon">                                
+                            <div class="listingCardIconTopCon">                                    
+                                <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    
+                                <div class="listingCardIcon" data-binding="innertext=IconHTML">
+                                    <div class="propertyCardBedIcon"><img src="/images/common/icons/svg/bed-gray.svg" alt=""></div>
+                                </div>                                
+                            </div>                                
+                            <div class="listingCardIconText" data-binding="innertext=Label">Bedrooms</div>                            
+                        </div>
+                        <div class="listingCardIconCon">                                
+                            <div class="listingCardIconTopCon">                                    
+                                <div class="listingCardIconNum" data-binding="innertext=NumberVal">3</div>                                    
+                                <div class="listingCardIcon" data-binding="innertext=IconHTML">
+                                    <div class="propertyCardBathIcon"><img src="/images/common/icons/svg/bath-gray.svg" alt=""></div>
+                                </div>                                
+                            </div>                                
+                            <div class="listingCardIconText" data-binding="innertext=Label">Bathrooms</div>                            
+                        </div>
+                    </div>                
+                    <div class="listingCardOfficeName" data-binding="innertext=OfficeNameAndType">RE/MAX River City</div>            
+                </div>        
+            </div>    
+        </a>    
+        <div class="listingCardFooter">        
+            <div class="listingCardFooterLeft">            
+                <div data-binding="RealtorImages">
+                    <img class="listingCardRealtorImg" src="https://cdn.realtor.ca/individual/TS636439120200000000/lowres/1243856.jpg" data-binding="src=RealtorImageURL,alt=RealtorImageAltText" alt="Taylor J. Hack photo">
+                </div>        
+            </div>        
+            <div class="listingCardFooterCenter">                    
+            </div>        
+            <div class="listingCardFooterRight">                        
+                <img class="listingCardOfficeImg" src="https://cdn.realtor.ca/organization/en-CA/TS637659311620000000/lowres/1004972.jpg" data-binding="visible=HasOfficeLogo,src=OfficeLogo,alt=OfficeAltText" alt="RE/MAX River City logo" visible="true">                    
+            </div>    
+        </div>
+    </div>
+</div>
+// -----------------------------realtor.ca search page------------------------------------------------
+
+/*
+$i    bed   bath
+ 0    0     1
+ 1    2     3
+ 2    4     5
+ 3    6     7
+ 4    8     9
+ 5   10    11
+ 6   12    13
+ 7   14    15
+ 8   16    17
+ 9   17    18
+10   19    20
+11   21    22
+12   23    24
+*/ 
+$line = "";
+for($i = 0; $i < 12; $i++) { 
+    try {
+        $listingPrice = $x("//div[@class='listingCardPrice']")[$i].innerText.trim(); 
+    } catch (err) {
+        $listingPrice = "undefined";
     }
-} 
-console.log($url_str);
 
+    try {
+        $address = $x("//div[@class='listingCardAddress']")[$i].innerText.trim(); 
+    } catch (err) {
+        $address = "undefined";
+    }
 
-// Get the prices
-$prices = $x("//div[@class='listingCardPrice']")
-$prices.length
-$prices[0].innerText
+    try {
+        $mls = $x("//div[@class='listingCardMLS']/span")[$i].innerText.trim(); 
+    } catch (err) {
+        $mls = "undefined";
+    }
 
-for($i = 0; $i < $prices.length; $i++){
-  console.log($prices[$i].innerText);
+    try {
+        $url = $x("//a[@class='blockLink listingDetailsLink']")[$i].href.trim();
+    } catch (err) {
+        $url = "undefined";
+    } 
+
+    $bedIndex = $i * 2; 
+    try {
+        $bed  = $x("//div[@class='listingCardIconText']")[$bedIndex ].previousElementSibling.firstElementChild.innerText;
+    } catch (err) {
+        $bed = "undefined";
+    } 
+
+    $bathIndex = $bedIndex + 1;
+    try {
+        $bath = $x("//div[@class='listingCardIconText']")[$bathIndex].previousElementSibling.firstElementChild.innerText; 
+    } catch (err) {
+        $bath = "undefined";
+    } 
+
+    $line += $listingPrice + "|";
+    $line += $address + "|";
+    $line += $mls + "|";
+    $line += $bed + "|";
+    $line += $bath + "|";
+    $line += $url + "\n";
 }
+console.log($line);
 
 
 
-// Get the addresses
-$addresses = $x("//div[@class='listingCardAddress']")
-console.log($addresses.length);
-console.log($addresses[0].innerText);
-
-// Get the mls number
-$mls = $x("//div[@class='listingCardMLS']/span")
-console.log($mls.length);
-console.log($mls[0].innerText);
-
-// Get the number of beds
-$bedIcon = $x("//div[@class='propertyCardBedIcon']")
-$bedIcon[0]/parent
 
 
-
-$x("//div[@class='propertyCardBedIcon']/parent::node()")[0]
-
-$urls = $x("//img[@class='listingCardImage']") 
-$prices = $x("//div[@class='listingCardPrice']")
-$addresses = $x("//div[@class='listingCardAddress']")
-$mls = $x("//div[@class='listingCardMLS']/span")
-
-$line = '';
-for($i = 0; $i < 12; $i++){
-    $line += $addresses[$i].innerText + '|';
-    $line += $prices[$i].innerText + '|';
-    $line += $mls[$i].innerText + '|';
-    $line += '\n';
-} 
-console.log($line); 
 
 
 
