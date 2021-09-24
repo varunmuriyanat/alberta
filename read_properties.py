@@ -1,5 +1,5 @@
-with open("property_search5.md", "w") as fw:
-    with open("property_search5.txt", "r") as fp:
+with open("property_search6.csv", "w") as fw:
+    with open("collaboration_center_2021_09_23.txt", "r") as fp:
         line = fp.readline()
         cnt = 1
         address = None
@@ -14,25 +14,23 @@ with open("property_search5.md", "w") as fw:
         residential = None
         status_change = None
 
-        fw.write("|Status".ljust(16))
-        fw.write("|Price".ljust(9))
-        fw.write("|B".ljust(1))
-        fw.write("|Bat".ljust(3))
-        fw.write("|Postal".ljust(8))
-        fw.write("|FlrA".ljust(9))
-        fw.write("|Address".ljust(50))
-        fw.write("|Day".ljust(4))
-        fw.write("|Residential".ljust(61))
-        fw.write("|mls".ljust(9))
-        fw.write("|Description".ljust(1021))
-        fw.write("|")
+        fw.write("Status")
+        fw.write("|Price")
+        fw.write("|B")
+        fw.write("|Bat")
+        fw.write("|Postal")
+        fw.write("|FlrA")
+        fw.write("|Address")
+        fw.write("|Day")
+        fw.write("|Residential")
+        fw.write("|mls")
+        fw.write("|Description")
         fw.write("\n")
 
         while line:
-            if(cnt > 11):
-                cnt = cnt - 11
+            if(cnt > 12):
+                cnt = cnt - 12
 
-                fw.write("|")
                 fw.write(status_change + "|")
                 fw.write(price + "|")
                 fw.write(beds  + "|")
@@ -48,27 +46,29 @@ with open("property_search5.md", "w") as fw:
 
             if(cnt == 1):
                 address = line.strip()     
-                address = address.ljust(49)
+                address = address
             elif(cnt == 2):
-                postal= line.strip().replace("Postal Code: ", "")
+                address = address + ", " + line.strip()     
             elif(cnt == 3):
-                mls = line.strip()
+                postal= line.strip().replace("Postal Code: ", "").strip()
             elif(cnt == 4):
-                residential = line.strip().ljust(60)
+                mls = line.strip()
             elif(cnt == 5):
-                price = line.strip().replace("Price: ", "")
+                residential = line.strip()
             elif(cnt == 6):
-                description = line.strip().ljust(1020)
+                price = line.strip().replace("Price: ", "").strip()
             elif(cnt == 7):
-                beds = line.strip().replace("BEDS: ", "")
+                description = line.strip()
             elif(cnt == 8):
-                baths = line.strip().replace("BATHS: ", "")
+                beds = line.strip().replace("BEDS: ", "").strip()
             elif(cnt == 9):
-                flrArea = line.strip().replace("FlrArea SF : ", "").strip().ljust(8)
+                baths = line.strip().replace("BATHS: ", "").strip()
             elif(cnt == 10):
-                daysOnMarket = line.strip().replace("Days on Market: ", "").strip().ljust(3)
+                flrArea = line.strip().replace("FlrArea SF : ", "").strip()
             elif(cnt == 11):
-                status_change = line.strip().ljust(15)
+                daysOnMarket = line.strip().replace("Days on Market: ", "").strip()
+            elif(cnt == 12):
+                status_change = line.replace("Status: ","").strip()
 
             line = fp.readline() 
             cnt += 1
